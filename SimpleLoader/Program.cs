@@ -36,7 +36,7 @@ namespace SimpleLoader
             //version kontrol başlıyor
             WebClient WebClient = new WebClient();
             string versionbilgi = WebClient.DownloadString(versioncheckurl);
-            if (versionbilgi == "1.1")
+            if (versionbilgi != "1.1") 
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.Write("Eski Version Kullanıyorsun! Lütfen Yeni versiona geçiniz!");
@@ -52,7 +52,7 @@ namespace SimpleLoader
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(asciiart); // simple loader ascii artı yazdırdık!
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
-                Console.Write("\n\nGiriş Yap [1]\nDuyurular [2] \nÇıkış     [3]\n>");
+                Console.Write("\nGiriş Yap [1]\nDuyurular [2] \nÇıkış     [3]\n>");
                 string secenekler = Console.ReadLine();
                 int seceneklerSayi = Int32.Parse(secenekler); // string i inte çeviriyoruz!
                 switch (seceneklerSayi)
